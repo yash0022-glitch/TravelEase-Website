@@ -1,0 +1,1718 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: linear-gradient(90deg, #3f4042, #303947);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #c3a590;
+}
+
+/* Hero Section */
+/* Premium Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+   
+}
+
+/* Glass Effect */
+.hero-text {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  animation: fadeInUp 1.5s ease;
+}
+
+.hero-text h2 {
+  font-size: 3.5rem;
+  animation: fadeInDown 1.5s ease;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  animation: fadeInUp 1.5s ease;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.4s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.btn:hover {
+  background: #EA580C;
+  transform: scale(1.05);
+}
+/* Bubble Background */
+/* Premium Floating Particles */
+.bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -50px;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: floatUp 25s linear infinite;
+}
+
+/* Different Small Sizes */
+.bubbles span:nth-child(1) {
+  left: 10%;
+  width: 8px;
+  height: 8px;
+  background: #ff4d6d;
+}
+.bubbles span:nth-child(2) {
+  left: 25%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #00c2ff;
+  background: transparent;
+}
+.bubbles span:nth-child(3) {
+  left: 40%;
+  width: 6px;
+  height: 6px;
+  background: #ffd166;
+}
+.bubbles span:nth-child(4) {
+  left: 55%;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #9b5de5;
+  background: transparent;
+}
+.bubbles span:nth-child(5) {
+  left: 70%;
+  width: 10px;
+  height: 10px;
+  background: #06d6a0;
+}
+.bubbles span:nth-child(6) {
+  left: 85%;
+  width: 7px;
+  height: 7px;
+  background: #f15bb5;
+}
+.bubbles span:nth-child(7) {
+  left: 60%;
+  width: 5px;
+  height: 5px;
+  background: #00f5d4;
+}
+.bubbles span:nth-child(8) {
+  left: 35%;
+  width: 9px;
+  height: 9px;
+  border: 2px solid #ffbe0b;
+  background: transparent;
+}
+
+/* Smooth Float Animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-1200px) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Destinations */
+.destinations {
+  padding: 70px 50px;
+  text-align: center;
+}
+
+.destinations h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #1E3A8A;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 15px 0 5px;
+  color: #1E3A8A;
+}
+
+.card p {
+  padding: 0 15px 20px;
+  color: #555;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+  background: #1E3A8A;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease;
+}
+.popup-content input {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Services */
+.services {
+  padding: 50px;
+  text-align: center;
+}
+.service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.service {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.service img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+.service:hover {
+  transform: translateY(-10px);
+}
+
+/* Testimonials */
+.testimonials {
+  background: #f8f9fa;
+  padding: 50px;
+  text-align: center;
+}
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-style: italic;
+}
+
+/* Newsletter */
+.newsletter {
+  background: #0d6efd;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+}
+.newsletter input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  margin-right: 10px;
+}
+.newsletter button {
+  background: #ffdd00;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.newsletter button:hover {
+  background: #ffc107;
+}
+/* Stats Section */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  background: #f1f1f1;
+  padding: 50px;
+  text-align: center;
+}
+.stat {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 200px;
+}
+.stat h2 {
+  font-size: 2.5rem;
+  color: #3c5f0a;
+  margin-bottom: 10px;
+}
+/* Hero Destination */
+.hero-destination {
+  background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)),
+              url('https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?cs=srgb&dl=pexels-jaime-reimer-1376930-2662116.jpg&fm=jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-destination h2 {
+  font-size: 3rem;
+  animation: fadeInDown 1.5s ease;
+}
+
+.hero-destination p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Travel Categories */
+.travel-categories {
+  padding: 50px;
+  text-align: center;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.category-item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.category-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.category-item:hover {
+  transform: scale(1.05);
+}
+
+
+/* Explore More Section */
+.explore-more {
+  background: linear-gradient(90deg, #0F172A, #1E293B);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.explore-more .btn {
+  display: inline-block;
+  background: #FF7A00;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.explore-more .btn:hover {
+  background: #E66A00;
+  transform: scale(1.05);
+}
+/* USP Section */
+.usp {
+  padding: 50px;
+  text-align: center;
+  background: #f8f9fa;
+}
+.usp-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.usp-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.usp-item i {
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+
+/* Events Section */
+.events {
+  padding: 50px;
+  text-align: center;
+}
+.event-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.event {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* FAQ Section */
+.faq {
+  background: #0d6efd;
+  color: #fff;
+  padding: 50px;
+}
+.faq-item {
+  margin-bottom: 20px;
+}
+.faq-item h3 {
+  margin-bottom: 10px;
+}
+/* ===== Premium Booking Section ===== */
+
+/* ===== Premium Booking Section ===== */
+
+.premium-booking {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 40px 20px;
+}
+
+.booking-wrapper {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  color: #fff;
+  animation: fadeIn 1s ease;
+}
+
+.booking-wrapper h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.premium-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #fff;
+  color: #764ba2;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.premium-btn:hover {
+  background: #ffd369;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.season h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.season h3 a:hover {
+  color: #ff6600;
+}
+.welcome {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  animation: pop 0.8s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Summer Places Layout */
+.summer-places {
+  padding: 50px;
+}
+.summer-places h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.place {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.place img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+.place-info {
+  flex: 1;
+  padding: 20px;
+}
+.place-info h3 {
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+.place-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+/* Hero summer*/
+.hero-summer{
+  background: url('https://www.parkdeanresorts.co.uk/-/media/parkdean-resorts/sale/flash-summer-sale/summer-flash-sale_web-images_v2/sale-page-hero/summersalepage_hero_desktop.ashx?rev=f4f1024e1f954470bdb4dd7fe2e037bf&mw=1840&hash=E45EA7A6021AFEA6D731300366C15C31') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-summer h2 {
+  font-size: 3rem;
+  animation: fadeInDown 2s ease;
+}
+/* Inner Places List */
+.place ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.place ul li {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Itinerary */
+.itinerary {
+  background: #f8f9fa;
+  padding: 40px;
+}
+.itinerary h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+.day {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.day h3 {
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+/* Map Section */
+.map-section {
+  padding: 50px;
+  text-align: center;
+}
+.map-section iframe {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+/* Travel Tips */
+.travel-tips {
+  background: #f8f9fa;
+  padding: 40px;
+}
+.travel-tips ul {
+  list-style: none;
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+}
+.travel-tips li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+/* Hero Winter */
+.hero-winter {
+  background: url('https://th.bing.com/th/id/R.194147be11ef4c4eb8a5c300153a8740?rik=%2bp5oNPfnhNIi0Q&riu=http%3a%2f%2fwww.skimag.com%2fwp-content%2fuploads%2fsites%2f13%2f2019%2f06%2fbencphoto-1024.jpg&ehk=fZgRSD2nkf1ulRL7Mf3Z9Z8A3OuryanO0TzE89Zf%2b9c%3d&risl=&pid=ImgRaw&r=0') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-winter h2 {
+  font-size: 3rem;
+  animation: fadeInDown 2s ease;
+}
+
+/* Winter Places */
+.winter-places {
+  padding: 50px;
+}
+.place {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.place img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+.place-info {
+  flex: 1;
+  padding: 20px;
+}
+.place-info h3 {
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+/* Map Section */
+.map-section {
+  padding: 50px;
+  text-align: center;
+}
+.map-section iframe {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Itinerary */
+.itinerary {
+  background: #f8f9fa;
+  padding: 40px;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+.day {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.day h3 {
+  color: #0d6efd;
+}
+/* Hero Monsoon */
+.hero-monsoon {
+  background: url('https://www.gannett-cdn.com/-mm-/58a50f9356714d6b247d3c6ca48841c0c2d73a41/c=0-97-1996-1225/local/-/media/2016/06/14/Phoenix/Phoenix/636015047552248993-monsoon01.jpg?width=3200&height=1680&fit=crop') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-monsoon h2 {
+  font-size: 3rem;
+  animation: fadeInDown 2s ease;
+}
+
+/* Monsoon Places */
+.monsoon-places {
+  padding: 50px;
+}
+.place {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.place img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+.place-info {
+  flex: 1;
+  padding: 20px;
+}
+.place-info h3 {
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+/* Map Section */
+.map-section {
+  padding: 50px;
+  text-align: center;
+}
+.map-section iframe {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+/* Itinerary */
+.itinerary {
+  background: #f8f9fa;
+  padding: 40px;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+.day {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.day h3 {
+  color: #0d6efd;
+}
+/* Hero Spring */
+.hero-spring {
+  background: url('https://sisbhopal.edu.in/assets/images/blog/1439997967.webp') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-spring h2 {
+  font-size: 3rem;
+  animation: fadeInDown 2s ease;
+}
+
+/* Spring Places */
+.spring-places {
+  padding: 50px;
+}
+.place {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.place img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+.place-info {
+  flex: 1;
+  padding: 20px;
+}
+.place-info h3 {
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+/* Map Section */
+.map-section {
+  padding: 50px;
+  text-align: center;
+}
+.map-section iframe {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Itinerary */
+.itinerary {
+  background: #f8f9fa;
+  padding: 40px;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+.day {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.day h3 {
+  color: #0d6efd;
+}
+/* Hero Autumn */
+.hero-autumn {
+  background: url('https://www.grunge.com/img/gallery/why-do-we-say-autumn-and-fall/l-intro-1665667015.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-autumn h2 {
+  font-size: 3rem;
+  animation: fadeInDown 2s ease;
+}
+.hero-autumn p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+/* Autumn Places */
+.autumn-places {
+  padding: 50px;
+}
+.autumn-places h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: #0d6efd;
+}
+.place {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.place:hover {
+  transform: scale(1.02);
+}
+.place img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+.place-info {
+  flex: 1;
+  padding: 20px;
+}
+.place-info h3 {
+  color: #dc3545; /* autumn vibe red */
+  margin-bottom: 10px;
+}
+.place-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.place-info ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.place-info ul li {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Map Section */
+.map-section {
+  padding: 50px;
+  text-align: center;
+}
+.map-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+.map-section iframe {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Itinerary */
+.itinerary {
+  background: #f8f9fa;
+  padding: 40px;
+}
+.itinerary h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #0d6efd;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+.day {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.day h3 {
+  color: #dc3545;
+  margin-bottom: 10px;
+}
+.day p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* Hero Section */
+.hero-uttarakhand {
+  background: url('https://vedicfeed.com/wp-content/uploads/2019/08/Badrinath-Temple.jpg') no-repeat center center/cover;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+.hero-uttarakhand h2 {
+  font-size: 3.5rem;
+  animation: fadeInDown 2s ease;
+}
+.hero-uttarakhand p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/* About Section */
+.about-uttarakhand {
+  padding: 40px;
+  text-align: center;
+}
+.about-uttarakhand h2 {
+  color: #0d6efd;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+.about-uttarakhand p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Tourism Highlights */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 30px;
+}
+.highlight {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.highlight h3 {
+  color: #dc3545;
+  margin-bottom: 10px;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 30px;
+}
+.grid-item {
+  background: #fff;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+}
+.grid-item h3 {
+  padding: 10px;
+  color: #0d6efd;
+}
+.grid-item p {
+  padding: 0 10px 10px;
+  font-size: 1rem;
+  color: #555;
+}
+/* Festivals Section */
+.festivals {
+  background: #f8f9fa;
+  padding: 60px;
+}
+.festivals h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #dc3545;
+  font-size: 2.5rem;
+}
+.festivals p {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* Festival Grid */
+.festival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+.festival-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.festival-item:hover {
+  transform: translateY(-5px);
+}
+.festival-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.festival-item h3 {
+  padding: 15px;
+  color: #0d6efd;
+}
+.festival-item p {
+  padding: 0 15px 20px;
+  font-size: 1rem;
+  color: #555;
+}
+/* Char Dham Section */
+.char-dham {
+  padding: 50px;
+  background: #f8f9fa;
+}
+.char-dham h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+.char-dham p {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+.char-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+}
+.char-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.char-item h3 {
+  color: #dc3545;
+  margin: 10px 0;
+}
+.char-item p {
+  padding: 0 15px 15px;
+  font-size: 1rem;
+  color: #555;
+}
+/* Hero Jaipur */
+.hero-jaipur {
+  background: url('https://www.tripsavvy.com/thmb/PMUGUkUQejOoqmPTvU3Sk7MkZ4U=/2121x1414/filters:fill(auto,1)/GettyImages-615625258-723b86363a654db482191db78b31294e.jpg') no-repeat center center/cover;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-jaipur h2 {
+  font-size: 3.5rem;
+  animation: fadeInDown 2s ease;
+}
+.hero-jaipur p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/* About Jaipur */
+.about-jaipur {
+  padding: 50px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+.about-jaipur p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 30px;
+}
+.grid-item {
+  background: #fff;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+}
+.grid-item h3 {
+  padding: 10px;
+  color: #0d6efd;
+}
+.grid-item p {
+  padding: 0 10px 15px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Tourism Highlights */
+.tourism-highlights {
+  background: #f8f9fa;
+  padding: 40px;
+}
+.tourism-highlights h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.tourism-highlights ul {
+  list-style: none;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+.tourism-highlights li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+/* Gallery */
+.gallery {
+  padding: 50px;
+}
+.gallery h2 {
+  margin-bottom: 30px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: #0d6efd;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+/* Royal Experiences */
+.royal-experiences {
+  background: #fff8f0;
+  padding: 60px;
+}
+.royal-experiences h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #dc3545;
+  font-size: 2.5rem;
+}
+.royal-experiences p {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* Royal Grid */
+.royal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+.royal-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  text-align: center;
+}
+.royal-item:hover {
+  transform: translateY(-5px);
+}
+.royal-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.royal-item h3 {
+  padding: 15px;
+  color: #0d6efd;
+}
+.royal-item p {
+  padding: 0 15px 20px;
+  font-size: 1rem;
+  color: #555;
+}
+/* Hero Kerala */
+.hero-kerala {
+  background: url('https://media1.thrillophilia.com/filestore/4ejffp1qxvts62n5p4szs6n4rwx5_shutterstock_1943880517.jpg') no-repeat center center/cover;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-kerala h2 {
+  font-size: 3.5rem;
+  animation: fadeInDown 2s ease;
+}
+.hero-kerala p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/* About Kerala */
+.about-kerala {
+  padding: 50px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+.about-kerala p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 30px;
+}
+.grid-item {
+  background: #fff;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.grid-item img {
+  width: 100%;
+  height: 220px;
+}
+.grid-item h3 {
+  padding: 10px;
+  color: #0d6efd;
+}
+.grid-item p {
+  padding: 0 10px 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Tourism Highlights */
+.tourism-highlights {
+  background: #ebf0f5;
+  padding: 40px;
+}
+.tourism-highlights ul {
+  list-style: none;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+.tourism-highlights li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+/* Royal Experiences */
+.royal-experiences {
+  background: #fff8f0;
+  padding: 60px;
+}
+.royal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+.royal-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.royal-item:hover {
+  transform: translateY(-5px);
+}
+.royal-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.royal-item h3 {
+  padding: 15px;
+  color: #0d6efd;
+}
+/* Hero Himachal */
+.hero-himachal {
+  background: url('https://www.himachal.exploreindia.in/wordpress/wp-content/uploads/2013/05/hp1.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-himachal h2 {
+  font-size: 3.5rem;
+  animation: fadeInDown 2s ease;
+}
+.hero-himachal p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/* About Himachal */
+.about-himachal {
+  padding: 50px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+.about-himachal p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Masonry Grid for Best Places */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 30px;
+}
+.grid-item {
+  background: #ffffff;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.grid-item img {
+  width: 100%;
+  height: 250px;
+}
+.grid-item h3 {
+  padding: 10px;
+  color: #0d6efd;
+}
+.grid-item p {
+  padding: 0 10px 15px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Tourism Highlights */
+.tourism-highlights {
+  background: #f8f9fa;
+  padding: 40px;
+}
+.tourism-highlights ul {
+  list-style: none;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+.tourism-highlights li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+/* Adventure Activities */
+.adventure {
+  background: #fff8f0;
+  padding: 60px;
+}
+.adventure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+.adventure-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.adventure-item:hover {
+  transform: translateY(-5px);
+}
+.adventure-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.adventure-item h3 {
+  padding: 15px;
+  color: #0d6efd;
+}
+.adventure-item p {
+  padding: 0 15px 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Festivals Section */
+.festivals {
+  background: #f8f9fa;
+  padding: 60px;
+}
+.festival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+.festival-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  text-align: center;
+}
+.festival-item:hover {
+  transform: translateY(-5px);
+}
+.festival-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.festival-item h3 {
+  padding: 15px;
+  color: #dc3545;
+}
+.festival-item p {
+  padding: 0 15px 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Map Section */
+.map-section {
+  padding: 50px;
+  text-align: center;
+}
+.map-section iframe {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.map-section p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Gallery */
+.gallery {
+  padding: 50px;
+}
+.gallery h2 {
+  margin-bottom: 30px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: #0d6efd;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+.premium-btn:hover {
+  background: #ffd369;
+  color: #000;
+  transform: translateY(-3px);
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelEase - Confirmation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Glass Card */
+.invoice-box {
+  width: 90%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  color: white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease;
+}
+
+.invoice-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invoice-box p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+hr {
+  border: 0.5px solid rgba(255,255,255,0.3);
+}
+
+/* Pay Button */
+.pay-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  color: white;
+  transition: 0.3s;
+}
+
+.pay-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Celebration Animation */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: red;
+  top: -10px;
+  animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+.success-message {
+  text-align: center;
+  font-size: 20px;
+  color: #00ffcc;
+  margin-top: 15px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="invoice-box" id="confirmation">
+
+  <h2>🎉 Booking Summary</h2>
+
+  <p><strong>Booking ID:</strong> <span id="bookingID"></span></p>
+  <hr>
+
+  <p><strong>Name:</strong> <span id="name"></span></p>
+  <p><strong>Email:</strong> <span id="email"></span></p>
+  <p><strong>From:</strong> <span id="from"></span></p>
+  <p><strong>To:</strong> <span id="to"></span></p>
+  <p><strong>Travel Date:</strong> <span id="date"></span></p>
+  <p><strong>Travellers:</strong> <span id="travellers"></span></p>
+
+  <hr>
+
+  <p><strong>Total Payable:</strong> ₹<span id="total"></span></p>
+
+  <button class="pay-btn" onclick="makePayment()">💳 Pay Now</button>
+
+  <div id="successText"></div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  document.getElementById("bookingID").innerText = localStorage.getItem("bookingID");
+  document.getElementById("name").innerText = localStorage.getItem("name");
+  document.getElementById("email").innerText = localStorage.getItem("email");
+  document.getElementById("from").innerText = localStorage.getItem("from");
+  document.getElementById("to").innerText = localStorage.getItem("to");
+  document.getElementById("date").innerText = localStorage.getItem("date");
+  document.getElementById("travellers").innerText = localStorage.getItem("travellers");
+  document.getElementById("total").innerText = localStorage.getItem("total");
+
+});
+function makePayment(){
+
+  let total = localStorage.getItem("total");
+
+  if(!total){
+    alert("Invalid Payment ❌");
+    return;
+  }
+
+  const btn = document.querySelector(".pay-btn");
+  btn.innerText = "Processing...";
+  btn.disabled = true;
+
+  setTimeout(() => {
+
+    document.getElementById("successText").innerHTML =
+      "<div class='success-message'>✅ Payment Successful!</div>";
+
+    createConfetti();
+    generatePDF();
+
+    // 🔥 Button Change After Payment
+    btn.innerText = "🏠 Back to Home";
+    btn.disabled = false;
+    btn.style.background = "linear-gradient(45deg, #00b09b, #96c93d)";
+
+    btn.onclick = function(){
+      window.location.href = "index.html";
+    };
+
+  }, 1500);
+}
+function createConfetti(){
+  for(let i=0;i<50;i++){
+    let confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+    confetti.style.backgroundColor =
+      "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+    confetti.style.animationDuration =
+      (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(confetti);
+
+    setTimeout(()=>{confetti.remove();},5000);
+  }
+}
+function generatePDF(){
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  let bookingID = localStorage.getItem("bookingID");
+  let name = localStorage.getItem("name");
+  let email = localStorage.getItem("email");
+  let from = localStorage.getItem("from");
+  let to = localStorage.getItem("to");
+  let date = localStorage.getItem("date");
+  let travellers = localStorage.getItem("travellers");
+  let total = localStorage.getItem("total");
+
+  doc.setFontSize(18);
+  doc.text("TravelEase - Booking Invoice", 20, 20);
+
+  doc.setFontSize(12);
+  doc.text("Booking ID: " + bookingID, 20, 35);
+  doc.text("Name: " + name, 20, 45);
+  doc.text("Email: " + email, 20, 55);
+  doc.text("From: " + from, 20, 65);
+  doc.text("To: " + to, 20, 75);
+  doc.text("Travel Date: " + date, 20, 85);
+  doc.text("Travellers: " + travellers, 20, 95);
+  doc.text("Total Paid: Rs " + total, 20, 105);
+
+  doc.save("TravelEase-Invoice-" + bookingID + ".pdf");
+}
+</script>
+
+</body>
+</html>

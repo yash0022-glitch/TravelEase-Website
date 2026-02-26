@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelEase - Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">TravelEase</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="booking.html">Bookings</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <section id="booking" class="premium-booking">
+  <div class="booking-wrapper">
+    <h2>Book Your Dream Journey ✈️</h2>
+
+    <form action="/confirm" method="POST" oninput="calculatePrice()">
+
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <!-- From Place -->
+      <div class="form-group">
+        <label for="from">Leaving From</label>
+        <input type="text" id="from" name="from" placeholder="Enter your city" required>
+      </div>
+
+      <!-- Destination State -->
+      <div class="form-group">
+        <label for="destination">Destination (All India States)</label>
+        <select id="destination" name="destination" required>
+          <option value="">Select State</option>
+          <option value="3000">Andhra Pradesh</option>
+          <option value="3500">Arunachal Pradesh</option>
+          <option value="2500">Assam</option>
+          <option value="2000">Bihar</option>
+          <option value="2200">Chhattisgarh</option>
+          <option value="4000">Goa</option>
+          <option value="2700">Gujarat</option>
+          <option value="2100">Haryana</option>
+          <option value="3200">Himachal Pradesh</option>
+          <option value="2300">Jharkhand</option>
+          <option value="3000">Karnataka</option>
+          <option value="4500">Kerala</option>
+          <option value="2600">Madhya Pradesh</option>
+          <option value="3500">Maharashtra</option>
+          <option value="2800">Manipur</option>
+          <option value="2900">Meghalaya</option>
+          <option value="3000">Mizoram</option>
+          <option value="3100">Nagaland</option>
+          <option value="2400">Odisha</option>
+          <option value="2000">Punjab</option>
+          <option value="3800">Rajasthan</option>
+          <option value="4200">Sikkim</option>
+          <option value="3300">Tamil Nadu</option>
+          <option value="3100">Telangana</option>
+          <option value="2700">Tripura</option>
+          <option value="1900">Uttar Pradesh</option>
+          <option value="3600">Uttarakhand</option>
+          <option value="2800">West Bengal</option>
+        </select>
+      </div>
+
+      <!-- Destination City -->
+      <div class="form-group">
+        <label for="city">Destination City</label>
+        <input type="text" id="city" name="city" placeholder="Enter city name" required>
+      </div>
+
+      <!-- Travel Date -->
+      <div class="form-group">
+        <label for="date">Travel Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <!-- Travellers -->
+      <div class="form-group">
+        <label for="travellers">Number of Travellers</label>
+        <input type="number" id="travellers" name="travellers" min="1" required>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+      </div>
+
+      <!-- Price -->
+      <div class="form-group">
+        <label>Total Price (₹)</label>
+        <input type="text" id="totalPrice" name="totalPrice" readonly>
+      </div>
+
+      <button type="submit" class="premium-btn">Confirm Booking</button>
+
+    </form>
+  </div>
+</section>
+
+<script>
+function calculatePrice() {
+  let statePrice = document.getElementById("destination").value;
+  let travellers = document.getElementById("travellers").value;
+
+  if (statePrice && travellers) {
+    let total = statePrice * travellers;
+    document.getElementById("totalPrice").value = total;
+  }
+}
+</script>
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const bookingID = "TRV" + Math.floor(Math.random() * 100000);
+
+  localStorage.setItem("bookingID", bookingID);
+  localStorage.setItem("name", document.getElementById("name").value);
+  localStorage.setItem("email", document.getElementById("email").value);
+  localStorage.setItem("from", document.getElementById("from").value);
+  localStorage.setItem("to", document.getElementById("destination").options[
+    document.getElementById("destination").selectedIndex
+  ].text + ", " + document.getElementById("city").value);
+  localStorage.setItem("date", document.getElementById("date").value);
+  localStorage.setItem("travellers", document.getElementById("travellers").value);
+  localStorage.setItem("total", document.getElementById("totalPrice").value);
+
+  window.location.href = "confirmation.html";
+
+});
+</script>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 TravelEase. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
